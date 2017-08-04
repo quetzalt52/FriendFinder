@@ -14,17 +14,27 @@ module.exports = function(app){
   	var matchName = '';
   	var matchImage = '';
   	var scoreDiff = 50;
+    var scores = [];
 
   	// new friend list 
   	for(var i = 0; i < showfriends.length; i++){
   		var diff = 0;
   		for(var j = 0; j < userInput.length; j++){
   			//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs
-  			diff += Math.abs(showfriends[i].scores[j] - userInput[j]);
-  			console.log("diff" + diff);
-		}//end of jloop
+  			//should subtract  index values and converts them into posive numbers 
+        diff += Math.abs(showfriends[i].scores[j] - userInput[j]);
+  			//console.log("diff" + diff);
 
-		if(diff < scoreDiff){
+		}//end of jloop
+    // need to add all the index values of showfiends and userInput  and stored them in a variable called
+    //result
+    var  result = 0;
+
+    //need a math.min to determine the lowest score 
+	 // need an array that can look at the index of that array to generate a possible match
+   //need to return a match after the user finish with their survey
+
+    if(diff < scoreDiff){
 			console.log("show diff" + diff);
 			matchName = friends[i].name;
 			matchImage = friends[i].photo
